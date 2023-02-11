@@ -1,0 +1,18 @@
+html,
+body {
+	height: 100%;
+
+	font-family: "Lato";
+	font-weight: 400;
+	color: $color;
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
