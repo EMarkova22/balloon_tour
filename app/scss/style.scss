@@ -72,6 +72,70 @@
 		margin-bottom: 6.5rem;	
 	}
 }
+
+.section-about {
+	&__title{
+		margin-bottom: 8rem;
+	}
+	&__btn-text{
+		&:link,
+		&:visited{
+			font-size: 1.6rem;
+			line-height: 1.9rem;
+			letter-spacing: .2rem;
+			font-weight: 700;
+			color: $color-brown-light;
+			padding: 1rem;
+			border-bottom: 1px $color-brown-light solid;	
+			display: inline-block;	
+			transition: all .5s;	
+		}
+		&:hover{ 
+			background-color: $color-brown-light;
+			color: $color-white;
+			box-shadow: $box-shadow;
+			transform: translateY(-.2rem);
+		}
+		&:active{ 
+			transform: translateY(0rem)
+		
+		}
+	}
+	&__composition{
+		position: relative;
+	}
+	&__composition-photo{
+		width: 55%;
+		box-shadow: $box-shadow;
+		border-radius: .5rem;
+		position: absolute;
+		z-index: 10;
+		transition: all .2s;
+		outline-offset: 1rem; // отступ рамки от изображения
+		&:hover{
+			transform: scale(1.1);
+			z-index: 20;
+			outline: 1rem solid $color-brown-light; // анимация рамки
+		}		
+	}
+	&__composition--n1{
+		top: 0rem;
+		left: 0rem;
+	}
+	&__composition--n2{
+		top: 2rem;
+		right: 0rem;
+	}
+	&__composition--n3{
+		top: 13rem;
+		left: 10rem;
+	}
+	&:hover &__composition-photo:not(:hover){
+		transform: scale(.95)
+	}
+}
+
+
 	
 
 
