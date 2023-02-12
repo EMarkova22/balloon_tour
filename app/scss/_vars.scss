@@ -1,1 +1,14 @@
-$color: #777777;
+// цвет текста
+$color-gray: #777777;
+
+// основные цвета сайта
+$color-brown-light: #BA8554;
+$color-brown-dark: #A14F03;
+
+// черный и белый цвет сайта
+$color-black: #000000;
+$color-white: #ffffff;
+
+// тень для кнопок
+$box-shadow: (0px .4rem .4rem rgba(0, 0, 0, 0.3));
+$shadow-h2: 0rem .4rem .4rem rgba($color-black, .25);

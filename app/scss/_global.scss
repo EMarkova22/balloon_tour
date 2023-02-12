@@ -1,18 +1,70 @@
 html,
 body {
 	height: 100%;
-
-	font-family: "Lato";
+	font-family: 'Lato', sans-serif;
+	font-style: normal;
 	font-weight: 400;
-	color: $color;
+	color: $color-gray;
+	font-size: 1.6rem;
+	letter-spacing: .2rem;
+	padding: 5rem;
+	background-color: $color-white;
+}
+
+html {
+	font-size: 10px; // 1 rem = 10px
+}
+
+.grey-bg-wrapper {
+	background-color: #F7F7F7;
 }
 
 .main {
 	flex-grow: 1;
 }
 
-.container {
-	max-width: 1140px;
-	margin: 0 auto;
-	padding: 0 15px;
+// .title {
+// 	font-weight: 800;
+// 	font-size: 36px;
+// 	line-height: 43px;
+// 	letter-spacing: 10px;	
+// }
+
+.btn {
+	font-size: 2rem;
+   line-height: 2.4rem;
+	&:link,
+	&:visited{
+		@include style-link($color-gray); // вставить созданный миксин style-link
+		padding: 1.5rem 4rem;
+		background: $color-white;
+		border-radius: 5rem;
+		transition: all .3s;
+		position: relative;
+	}
+	&:hover{ // псевдоклассы :
+		transform: translateY(-0.4rem);
+		box-shadow: $box-shadow;
+		&::after{
+			opacity: 0;
+			transform: scaleX(1.5) scaleY(1.7);
+		}
+	}
+	&:active{ 
+		transform: translateY(-0.2rem);
+		box-shadow: (0px 0.4rem 0.4rem rgba(0, 0, 0, 0.1));
+	}
+	&::after{ // псевдоэлементы ::
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $color-white;
+		width: 100%;
+		height: 100%;
+		border-radius: 5rem;
+		display: inline-block;
+		z-index: -1;
+		transition: all .4s;
+	}
 }

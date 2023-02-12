@@ -1,0 +1,16 @@
+// миксины - фрагмент кода, который можно вставлять несколько раз
+@mixin style-link($color-gray) {
+	display: inline-block;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $color-gray;
+}
+// ($color-gray) - аргумент
+
+@mixin clearFix {
+	&::after{
+      content: "";
+      display: table;
+      clear: both;
+	}
+}

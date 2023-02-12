@@ -15,10 +15,9 @@ const browserSync = require('browser-sync').create(); // автоматичес�
 const uglify = require('gulp-uglify'); // сжатие файлов js и библиотек
 const autoprefixer = require('gulp-autoprefixer'); // подключаем библиотеку для автоматического добавления префиксов
 const imagemin = require('gulp-imagemin'); // оптимизация изображений
-// const ghPages = require('gulp-gh-pages'); // выгрузка страницы на github pages
+const babel = require('gulp-babel'); // преобразует Java Script в старый стандарт  
 const del = require('del'); // чистка папки dist
 
-const babel = require('gulp-babel');
 
 
 // Задачи
@@ -93,13 +92,6 @@ function images() {
 		.pipe(dest('dist/images')) // выгружаем оптимизированные изображения в папку dist/images
 }
 
-// function deploy() {
-// 	return src('./dist/**/*')
-// 	.pipe(ghPages({
-// 		remoteUrl: "https://github.com/EMarkova22/balloon_tour.git",
-// 		branch: "main"
-// 	}))
-// };
 
 function cleanDist() {
 	return del('dist') // удаляем всё содержимое папки "dist/"
@@ -128,7 +120,6 @@ exports.watching = watching
 exports.browsersync = browsersync
 exports.images = images
 exports.cleanDist = cleanDist
-// exports.deploy = deploy
 
 // создаём задачу "build", которая последовательно выполняет нужные операции
 exports.build = series(cleanDist, styles, scripts, images, build);
