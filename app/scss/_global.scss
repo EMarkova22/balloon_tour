@@ -38,6 +38,7 @@ html {
 	color: transparent;
 	transition: all .4s;
 	backface-visibility: hidden;
+	margin-bottom: 8rem;
 	&:hover{
 		transform: skewY(2deg) skewX(15deg) scale(1.1);
 		text-shadow: $shadow-h2;
