@@ -460,6 +460,45 @@
 		}
 }
 
+.footer {
+	padding: 8rem 0;
+	background: #333333;
+	&__logo-wrap{
+		text-align: center;
+	}
+	&__logo-img{
+		width: 12rem;
+		display: inline-block;
+	}
+	&__list{
+		text-align: center;
+	}
+	&__list-item{
+		display: inline-block;
+		&:not(:last-child){
+			margin-right: 5rem;
+		}
+	}
+	&__list-link{
+		&:link, &:visited{
+			color: $color-white;
+			text-transform: uppercase;
+			font-weight: 300;
+			display: inline-block;
+			transition: all .3s;
+		}
+		&:active,
+		&:hover{
+			transform: rotate(5deg) scale(1.2);
+			color: $color-brown-dark;
+			text-shadow: $shadow-h2;
+		}
+	}
+}
+
+
+
+
 
 	
 
