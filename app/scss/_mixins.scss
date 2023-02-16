@@ -14,3 +14,54 @@
       clear: both;
 	}
 }
+
+// альтернативный способ создания @media запросов
+// используем ключевые точки только там, где ломается дизайн
+
+// добавляем к классам оперделенный медиа запрос через @mixin
+
+/* В аругумент миксина мы будем указывать несколько вариантов брейкпоинтов, таких как:
+
+    - phone
+    - tab-port
+    - tab-land
+    - big-screen
+
+    */
+
+@mixin phone {
+	@media (max-width: 600px){
+		@content;
+	}
+}
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == phone {
+		@media (max-width: 600px) { 
+			@content 
+		};
+	}
+
+	@if $breakpoint == tab-port {
+		@media (max-width: 900px) { 
+			@content 
+		};
+	}
+
+	@if $breakpoint == tab-land {
+		@media (max-width: 1240px) { 
+			@content 
+		};
+	}
+
+	@if $breakpoint == big-screen {
+		@media (min-width: 1800px) { 
+			@content 
+		};
+	}
+}
+
+
+
+
+

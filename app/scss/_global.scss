@@ -1,4 +1,20 @@
-html,
+html {
+	font-size: 62.5%; // 1 rem = 10px
+	@include respond(tab-land) {
+		font-size: 56.2%; // 9px
+	}
+	@include respond(tab-port) {
+		font-size: 50%; 
+	}
+	@include respond(phone) {
+		font-size: 30%;
+	}
+	@include respond(big-screen) {
+		font-size: 75%;
+	}
+}
+
+
 body {
 	height: 100%;
 	font-family: 'Lato', sans-serif;
@@ -10,11 +26,6 @@ body {
 	padding: 5rem;
 	background-color: $color-white;
 }
-
-html {
-	font-size: 10px; // 1 rem = 10px
-}
-
 
 .grey-bg-wrapper {
 	background-color: #F7F7F7;
@@ -43,6 +54,9 @@ html {
 		transform: skewY(2deg) skewX(15deg) scale(1.1);
 		text-shadow: $shadow-h2;
 	}
+	@include respond(tab-land){
+		font-size: 3rem;
+	}
 }
 
 .subtitle {
@@ -51,6 +65,9 @@ html {
 	line-height: 2.4rem;
 	letter-spacing: .2rem;
 	margin-bottom: 1rem;
+	@include respond(tab-land){
+		font-size: 1.8rem;
+	}
 }
 
 .text {
@@ -58,6 +75,9 @@ html {
 	line-height: 140%;
 	letter-spacing: .2rem;
 	margin-bottom: 5rem;
+	@include respond(tab-land){
+		font-size: 1.5rem;
+	}
 
 }
 
@@ -74,6 +94,9 @@ html {
 		transition: all .3s;
 		position: relative;
 		border: none;
+		@include respond(tab-land){
+			font-size: 1.8rem;
+		}
 	}
 	&:hover{ // псевдоклассы :
 		transform: translateY(-0.4rem);
