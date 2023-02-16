@@ -5,11 +5,16 @@
 	@include clearFix;
 	&:not(:last-child){
 		margin-bottom: 8rem;
+		@include respond(tab-port){
+			margin-bottom: 4rem;
+		}
 	}
 	@include respond(tab-land){
 		max-width: 90.1rem; 
 	}	
-	
+	@include respond(tab-port){
+		max-width: 60rem;
+	}
 }
 
 .col-1-of-2 {
@@ -52,5 +57,10 @@
 		&:not(:last-child){
 			margin-right: 2rem;
 		}
+	}
+	@include respond(tab-port){
+		width: 100%;
+		margin-right: 0 !important; //максимальный приорите
+		margin-bottom: 4rem;
 	}
 }

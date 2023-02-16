@@ -57,6 +57,10 @@ body {
 	@include respond(tab-land){
 		font-size: 3rem;
 	}
+	@include respond(tab-port){
+		margin-bottom: 5rem;
+		letter-spacing: .6rem;
+	}
 }
 
 .subtitle {
@@ -68,7 +72,7 @@ body {
 	@include respond(tab-land){
 		font-size: 1.8rem;
 	}
-}
+}	
 
 .text {
 	font-size: 1.6rem;
@@ -96,6 +100,9 @@ body {
 		border: none;
 		@include respond(tab-land){
 			font-size: 1.8rem;
+		}
+		@include respond(tab-port){
+			padding: 2rem 5rem;
 		}
 	}
 	&:hover{ // псевдоклассы :

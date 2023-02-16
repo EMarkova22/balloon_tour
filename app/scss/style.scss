@@ -24,6 +24,7 @@
 		z-index: 200;
 		text-align: center;
 		cursor: pointer;
+		box-shadow: $box-shadow;
 	}
 	&__icon{
 		position: relative;
@@ -185,6 +186,11 @@
 		@include respond(tab-land){
 			font-size: 3.5rem;
 		}	
+		@include respond(tab-port){
+			font-size: 3.6rem;
+			letter-spacing: .5rem;
+			margin-bottom: 0;
+		}
 	}	
 	&__subtitle{
 		display: block;
@@ -201,6 +207,10 @@
 		@include respond(tab-land){
 			font-size: 3rem;
 			margin-bottom: 3rem;
+		}
+		@include respond(tab-port){
+			font-size: 3.2rem;
+			letter-spacing: .2rem;
 		}	
 	}
 
@@ -211,6 +221,9 @@
 	margin-bottom: 20rem;
 	@include respond(tab-land){
 		margin-bottom: 12rem;
+	}
+	@include respond(tab-port){
+		margin-bottom: 40rem;
 	}
 	&__btn-text{
 		&:link,
@@ -312,6 +325,9 @@
 	position: relative;
 	height: 50rem;
 	perspective: 150rem;
+	@include respond(tab-port){
+		height: 60rem;
+	}
 	&__side{
 		position: absolute;
 		height: 50rem;
@@ -323,6 +339,9 @@
 		box-shadow: $box-shadow;
 		border-radius: .5rem;
 		overflow: hidden;
+		@include respond(tab-port){
+			height: 60rem;
+		}
 	}
 	&__side--back{
 		background: linear-gradient(120deg, $color-brown-light, $color-brown-dark);
@@ -339,6 +358,12 @@
 		background-blend-mode: hard-light; // эффект наложения
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 		margin-bottom: 5rem;
+		@include respond(tab-port){
+			height: 30rem;
+		}
+		@include respond(tab-port){
+			margin-bottom: 7rem;
+		}
 	}
 	&__img--one-card{
 		background:  $color-brown-light url(../images/tour-card-1.jpg) center / cover no-repeat;
@@ -359,6 +384,10 @@
 		font-weight: 300;
 		text-transform: uppercase;
 		text-align: right;
+		@include respond(tab-port){
+			top: 25rem;
+			font-size: 3.8rem;
+		}
 	}
 	&__span{
 		background: linear-gradient(90deg, $color-brown-light, $color-brown-dark);
@@ -370,6 +399,15 @@
 		right: 0;
 		padding-bottom: 1rem;
 		padding-top: 0rem;
+		@include respond(tab-port){
+			top: 4.4rem;
+		}
+	}
+	&__descr{
+		@include respond(tab-port){
+			width: 60%;
+			margin: 0 auto;
+		}
 	}
 	&__list{
 		text-align: center;
@@ -386,6 +424,9 @@
 		}
 		@include respond(tab-land){
 			font-size: 1.5rem;
+		}
+		@include respond(tab-port){
+			font-size: 2rem;
 		}
 	}
 	&__backside-wrap{
@@ -429,8 +470,15 @@
 	margin: 0 auto;
 	padding: 6rem;
 	transform: skewX(330deg);
+	@include respond(tab-port){
+		transform: skewX(350deg);
+		padding: 3rem;
+	}
 	& > *{
 		transform: skew(-330deg);
+		@include respond(tab-port){
+			transform: skew(-350deg);
+		}
 	}
 	&__img{
 		background: green;
@@ -442,6 +490,11 @@
 		-webkit-shape-outside: circle(50% at 50% 50%);
 		margin-right: 4rem;
 		overflow: hidden;
+		@include respond(tab-port){
+			float: none;
+			margin: 0 auto;
+			margin-bottom: 3rem;
+		}
 		img{
 			height: 100%;
 			transform: scale(1.2);
@@ -460,8 +513,16 @@
 		opacity: 0;
 		transition: all .5s;
 	}
+	&__subtitle{
+		@include respond(tab-port){
+			text-align: center;
+		}
+	}
 	&__text{
 		margin-bottom: 0rem;
+		@include respond(tab-port){
+			text-align: center;
+		}
 	}
 	&:hover &__name{
 		transform: translate(-50%, -50%);
@@ -497,18 +558,29 @@
 .contact {
 	padding: 10rem;
 	background: linear-gradient(90deg, $color-brown-light, $color-brown-dark);
+	@include respond(tab-port){
+		padding: 4rem;
+	}
 	&__form{
 		height: 50rem;
 		background: linear-gradient(115deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 57%, rgba(186,133,80,0.8) 57%, rgba(161,79,3,0.8) 100%), url(../images/bg-contact-form.jpg) center / cover no-repeat;
 		box-shadow: $box-shadow;
 		border-radius: .5rem;
     	overflow: hidden;
+		 @include respond(tab-port){
+			background: linear-gradient(115deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) 507%, rgba(186,133,80,0.8) 57%, rgba(161,79,3,0.8) 100%),url(../images/bg-contact-form.jpg) center/cover no-repeat;
+		}
 	}
 }
 .form {
 	width: 66%;
 	padding-top: 5rem;
 	padding-left: 3rem;
+	@include respond(tab-port){
+		width: 100%;
+		padding-top: 3rem;
+		padding-left: 3rem;
+	}
 	&__group:not(:last-child){
 		margin-bottom: 2rem;
 	}
@@ -518,6 +590,14 @@
 	@include respond(tab-land){
 		&__group:not(:last-child){
 			margin-bottom: 0;
+		}
+		&__group:nth-child(4){
+			margin-bottom: 2.5rem;
+		}
+	}
+	@include respond(tab-port){
+		&__group:not(:last-child){
+			margin-bottom: 2rem;
 		}
 		&__group:nth-child(4){
 			margin-bottom: 2.5rem;
@@ -535,6 +615,10 @@
 		border-bottom: .3rem solid transparent;
 		border-radius: .5rem;
 		width: 78%;
+		@include respond(tab-port){
+			width: 90%;
+			box-shadow: $box-shadow;
+		}
 		&:focus{
 			outline: none;
 			border-bottom: .3rem solid #66D763;
@@ -639,6 +723,10 @@
 			&:not(:last-child){
 				margin-right: 1.6rem;
 			}
+		}
+		@include respond(tab-port){
+			margin: 0;
+			padding: 2rem;
 		}
 	}
 	&__list-link{
