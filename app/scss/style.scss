@@ -9,6 +9,127 @@
 
 
 
+.navigation {
+	&__toogle{
+		display: none;
+	}
+	&__btn{
+		background: $color-white;
+		height: 7rem;
+		width: 7rem;
+		border-radius: 50%;
+		position: fixed;
+		top: 15rem;
+		right: 15rem;
+		z-index: 200;
+		text-align: center;
+		cursor: pointer;
+	}
+	&__icon{
+		position: relative;
+		margin-top: 35px;
+		&,
+		&::after,
+		&::before{
+			width: 30px;
+			height: 2px;
+			background: $color-black;
+			display: inline-block;
+		}
+		&::after,
+		&::before{
+			content: "";
+			position: absolute;
+			left: 0;
+			transition: all .2s;
+		}
+		&::after{
+			top: 8px;
+		}
+		&::before{
+			top: -8px;
+		}
+	}
+	&__btn:hover &__icon::after{
+		top: 10px;
+	}
+	&__btn:hover &__icon::before{
+		top: -10px;
+	}
+	&__bg{
+		width: 5rem;
+		height: 5rem;
+		border-radius: 50%;
+		background: radial-gradient($color-brown-light, $color-brown-dark);
+		position: fixed;
+		right: 16rem;
+		top: 16rem;
+		z-index: 100;
+		transition: all .7s;
+		// transform: scale(80);
+	}
+	&__menu{
+		height: 100vh; // 100% высоты от монитора
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 0;
+		z-index: 150;
+		opacity: 0;
+		transition: all .3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	}
+	&__list{
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&__list-item{
+		text-align: center;
+		&:not(:last-child){
+			margin-bottom: 5rem;
+		}
+	}
+	&__list-link{
+		&:link, &:visited{
+			font-size: 4rem;
+			letter-spacing: .5rem;
+			color: $color-white;
+			text-transform: uppercase;
+			background: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+			padding: 1rem 2rem;
+			background-size: 220%;
+			transition: all .4s;
+			display: inline-block;
+		}
+		&:hover, &:active{
+			background-position: 100%;
+			color: $color-brown-dark;
+			transform: translateX(1rem);
+		}
+	}
+	&__toogle:checked ~ &__bg{
+		transform: scale(80);
+	}
+	&__toogle:checked ~ &__menu{
+		width: 100%;
+		opacity: 1;
+	}
+	&__toogle:checked + &__btn &__icon{
+		background: transparent;
+	}
+	&__toogle:checked + &__btn &__icon::after{
+		transform: rotate(-135deg);
+		top: 0;
+	}
+	&__toogle:checked + &__btn &__icon::before{
+		transform: rotate(135deg);
+		top: 0;
+	}
+}
+
+
 .header {
 	height: 95vh;
 	position: relative;
