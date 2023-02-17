@@ -20,6 +20,7 @@ const del = require('del'); // чистка папки dist
 
 
 
+
 // Задачи
 function styles() { // создаем задачу
 	return src('app/scss/style.scss') // путь к расположению файла

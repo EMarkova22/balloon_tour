@@ -2,13 +2,13 @@
   "name": "gulpstart",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "deploy": "gh-pages -d dist"
   },
   "author": "E_Markova",
   "license": "ISC",
-  "homepage": "https://github.com/EMarkova22/balloon_tour.git",
+  "homepage": "https://emarkova22.github.io/balloon_tour/",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
