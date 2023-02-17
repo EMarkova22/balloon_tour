@@ -134,11 +134,14 @@
 .header {
 	height: 95vh;
 	position: relative;
-	background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%), url(../images/header-bg.jpg) ;
+	background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%), url(../images/header-bg.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+	// @media (min-resolution: 192dpi) and (min-width: 670px), (min-width: 1340px) { // адаптив изображений, точка на 1 дюйм
+	// 	background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%), url(../images/header-bg-big.jpg);
+	// }
 	&__logo-img{
 		position: absolute;
 		height: 7rem;
@@ -326,7 +329,7 @@
 	height: 50rem;
 	perspective: 150rem;
 	@include respond(tab-port){
-		height: 60rem;
+		height: auto;
 	}
 	&__side{
 		position: absolute;
@@ -340,15 +343,31 @@
 		border-radius: .5rem;
 		overflow: hidden;
 		@include respond(tab-port){
-			height: 60rem;
+			height: auto;
+			position: relative;
+		}
+	}
+	&__side--front{
+		@include respond(tab-port){
+			padding-bottom: 13rem;
 		}
 	}
 	&__side--back{
 		background: linear-gradient(120deg, $color-brown-light, $color-brown-dark);
 		transform: rotateY(180deg);
+		@include respond(tab-port){
+			transform: rotateY(0deg);
+			padding: 5rem;
+			padding-top: 12rem;
+			margin-top: -11rem;
+			clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)
+		}
 	}
 	&:hover &__side--front{
 		transform: rotateY(-180deg);
+		@include respond(tab-port){
+			transform: rotateY(0deg);
+		}
 	}
 	&:hover &__side--back{
 		transform: rotateY(0deg);
@@ -434,6 +453,13 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		@include respond(tab-port){
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translate(0%, 0%);
+			text-align: center;
+		}
 	}
 	&__text{
 		margin-bottom: 8rem;
@@ -452,6 +478,9 @@
 	}
 	&__wrap-btn{
 		text-align: center;
+		@include respond(tab-port){
+			display: none;
+		}
 	}
 }
 
