@@ -25,6 +25,10 @@
 		text-align: center;
 		cursor: pointer;
 		box-shadow: $box-shadow;
+		@include respond(phone){
+			top: 6rem;
+			right: 6rem;
+		}
 	}
 	&__icon{
 		position: relative;
@@ -68,6 +72,10 @@
 		z-index: 100;
 		transition: all .7s;
 		// transform: scale(80);
+		@include respond(phone){
+			top: 7rem;
+			right: 7rem;
+		}
 	}
 	&__menu{
 		height: 100vh; // 100% высоты от монитора

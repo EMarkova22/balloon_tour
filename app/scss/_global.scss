@@ -25,6 +25,10 @@ body {
 	letter-spacing: .2rem;
 	padding: 5rem;
 	background-color: $color-white;
+	@include respond(tab-port){
+		padding: 1rem;
+	}
+
 }
 
 .grey-bg-wrapper {
